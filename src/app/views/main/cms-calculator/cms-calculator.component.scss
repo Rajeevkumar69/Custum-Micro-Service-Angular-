@@ -1,0 +1,24 @@
+.container {
+     margin-top: 15vh;
+     margin-left: 30%;
+     height: 50vh;
+     width: 80vh;
+}
+.card-body {
+     background-color: aqua;
+     height: 50vh;
+     input {
+          height: 30px;
+          width: 40vh;
+          // color: black;
+          // font-weight: 600px;
+          border-radius: 10px;
+          padding: 20px;
+     }
+}
+.card-header {
+     background-color: azure;
+     b {
+          padding-left: 85%;
+     }
+}

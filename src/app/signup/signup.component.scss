@@ -1,0 +1,20 @@
+.create-account-link {
+     color: blue;
+     text-decoration: none;
+     &:hover {
+          transition: 300ms;
+          text-decoration: underline;
+     }
+}
+.login-image {
+     text-align: center;
+     img {
+          border-radius: 100%;
+     }
+}
+.form-error {
+     color: red;
+     font-size: 12px;
+     font-style: italic;
+     font-weight: 600;
+}

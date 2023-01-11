@@ -1,0 +1,20 @@
+<div class="container">
+     <div class="row justify-content-cenmter">
+          <div class="col-md-12">
+               <div class="card bg-light mb-3" style="max-width: 18rem">
+                    <div class="card-header">
+                         <b>{{ result }} </b>
+                    </div>
+                    <div class="card-body">
+                         <input type="number" [(ngModel)]="firstNumber" placeholder="Enter First Number" />
+                         <input type="number" [(ngModel)]="secondNumber" placeholder="Enter Second Number" /> <br />
+                         <hr />
+                         <button class="btn btn-dark" (click)="cmsCalculator('add')">Add</button>
+                         <button class="btn btn-dark" (click)="cmsCalculator('subtract')">Subtract</button>
+                         <button class="btn btn-dark" (click)="cmsCalculator('multiply')">Multiply</button>
+                         <button class="btn btn-dark" (click)="cmsCalculator('Divide')">Divide</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

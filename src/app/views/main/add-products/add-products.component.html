@@ -1,0 +1,60 @@
+<div class="container">
+     <div class="row justify-content-center">
+          <div class="col-md-12">
+               <h5 class="text-center">Add your product's</h5>
+               <hr />
+          </div>
+          <div class="col-md-4">
+               <div class="card" style="width: 18rem; background-color: skyblue">
+                    <div class="card-body">
+                         <img style="height: 10rem; width: 15rem; border-radius: 10px" src="https://img.freepik.com/free-vector/illustrated-winter-clothes-collection_23-2148720548.jpg?w=2000" alt="../" />
+                    </div>
+               </div>
+          </div>
+          <div class="col-md-4">
+               <div class="card" style="width: 18rem; background-color: rgb(248, 213, 160)">
+                    <div class="card-body">
+                         <img style="height: 10rem; width: 10rem; border-radius: 10px" src="https://www.pngitem.com/pimgs/m/376-3760180_google-pixel-google-pixel-4-xl-hd-png.png" alt="..." />
+                    </div>
+               </div>
+          </div>
+          <br />
+          <div class="col-md-4">
+               <div class="card" style="width: 18rem; background-color: rgb(211, 64, 93)">
+                    <div class="card-body">
+                         <img style="height: 10rem" src="https://www.nicepng.com/png/full/982-9821153_stylish-kids-shoes.png" alt=".../" />
+                    </div>
+               </div>
+          </div>
+
+          <div class="col-md-6">
+               <br /><br />
+               <form [formGroup]="productsForm" (ngSubmit)="addProducts()">
+                    <!--  -->
+                    <div class="form-group">
+                         <input formControlName="productName" type="text" placeholder="Product Name" class="form-control" />
+                         <span *ngIf="productName && productName.invalid && productName.touched" class="form-error">Please enter valid details</span>
+                    </div>
+                    <!--  -->
+                    <div class="form-group">
+                         <input formControlName="productImage" type="text" placeholder="Enter Product Image path" class="form-control" />
+                         <span *ngIf="productImage && productImage.invalid && productImage.touched" class="form-error">Please provide valid link</span>
+                    </div>
+                    <!--  -->
+                    <div class="form-group">
+                         <textarea formControlName="productDescription" placeholder="Product Description" class="form-control"></textarea>
+                         <span *ngIf="productDescription && productDescription.invalid && productDescription.touched" class="form-error">Please enter valid details</span>
+                    </div>
+                    <!--  -->
+                    <div class="form-group">
+                         <input formControlName="productRating" type="text" placeholder="Product Rating" class="form-control" />
+                         <span *ngIf="productRating && productRating.invalid && productRating.touched" class="form-error">Please enter valid details</span>
+                    </div>
+                    <!--  -->
+                    <div class="form-group" style="text-align: center">
+                         <button type="submit" [disabled]="productsForm.invalid" class="btn btn-md btn-danger">Add Product</button>
+                    </div>
+               </form>
+          </div>
+     </div>
+</div>

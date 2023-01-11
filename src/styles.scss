@@ -1,0 +1,51 @@
+body {
+     background-color: #ffffff;
+     font-family: system-ui !important;
+}
+.cms-space1 {
+     height: 25px;
+}
+.cms-space2 {
+     height: 50px;
+}
+.cms-space3 {
+     height: 100px;
+}
+.center {
+     text-align: center;
+}
+.jc-center {
+     justify-content: center;
+     display: flex;
+}
+.cms-button {
+     padding: 4px 24px 4px 24px;
+}
+.cms-card {
+     box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3019607843), 0 1px 3px 1px rgba(60, 64, 67, 0.1490196078);
+     padding: 16px 20px;
+}
+.form-error {
+     color: red;
+     font-size: 12px;
+     font-style: italic;
+     font-weight: 600;
+}
+
+select {
+     -moz-appearance: none;
+     -webkit-appearance: none;
+}
+
+select::-ms-expand {
+     display: none;
+}
+
+html,
+body {
+     height: 100%;
+}
+body {
+     margin: 0;
+     font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

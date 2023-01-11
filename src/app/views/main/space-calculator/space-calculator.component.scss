@@ -1,0 +1,313 @@
+$ThemeTextColor: #323232;
+$ThemeBGColor: #ffffff;
+$ThemeTextLightColor: #ffffff;
+$ThemeColor: #e3faee;
+
+.height-1 {
+     height: 5px;
+}
+
+.height-2 {
+     height: 10px;
+}
+
+.height-3 {
+     height: 15px;
+}
+
+.height-4 {
+     height: 20px;
+}
+
+.height-5 {
+     height: 25px;
+}
+
+.main-section {
+     padding: 10px 20px;
+}
+
+.space-form-card {
+     border-radius: 0px;
+     padding: 20px 20px 20px 20px;
+     background-color: #6495ed;
+     border-radius: 5px;
+     //      background-color: #34aa75;
+}
+
+.form-control {
+     font-size: 16px !important;
+     font-weight: 600;
+     height: 48px !important;
+}
+
+label {
+     margin-bottom: 4px !important;
+     color: $ThemeTextColor;
+}
+
+.select-icon {
+     color: $ThemeTextColor;
+     position: relative;
+
+     span {
+          position: absolute;
+          right: 18px;
+          top: -36px;
+     }
+}
+
+.custom-select-icon {
+     color: $ThemeTextColor;
+     position: relative;
+
+     span {
+          position: absolute;
+          right: 18px;
+          top: 12px;
+     }
+}
+
+select {
+     cursor: pointer;
+}
+
+.form-bold-title {
+     color: #ffffff;
+     font-size: 24px;
+}
+
+.form-bold-title-2 {
+     color: $ThemeTextColor;
+}
+
+.custom-image {
+     img {
+          height: 148px;
+          width: auto;
+     }
+}
+
+.how-works-text {
+     font-size: 18px;
+     font-weight: 600;
+     color: $ThemeTextColor;
+}
+
+.up-down-form-control {
+     height: 45px !important;
+     text-align: center;
+}
+
+.fix-height {
+     height: 45px !important;
+}
+
+.space-title {
+     margin-top: auto;
+     margin-bottom: auto;
+     display: flex;
+     justify-content: space-between;
+
+     .title {
+          color: $ThemeTextLightColor;
+     }
+
+     .remove-icon {
+          display: none;
+          color: $ThemeTextLightColor;
+     }
+}
+
+.input-group-text {
+     padding: 0px 10px;
+     cursor: pointer;
+}
+
+.on-hover:hover {
+     transition: 300ms;
+     color: $ThemeColor;
+     background-color: ThemeBGColor;
+}
+
+.button-text {
+     font-weight: 600;
+}
+
+.space-row {
+     margin-top: 5px;
+     margin-bottom: 5px;
+}
+
+.space-row:hover {
+     transition: 300ms;
+
+     .remove-icon {
+          cursor: pointer;
+          display: table;
+     }
+}
+
+.custom-select-option {
+     display: none;
+     z-index: 10;
+     position: absolute;
+     width: calc(100% - 40px);
+
+     .select-option-card {
+          border-radius: 0px;
+          padding: 8px 8px;
+          margin: 2px 0px;
+          max-height: 200px;
+          overflow: hidden;
+          overflow-y: auto;
+          box-shadow: 0 1px 2px #3c40434d, 0 1px 3px 1px #3c404326;
+
+          .unselected-space {
+               display: flex;
+               justify-content: space-between;
+               cursor: pointer;
+               padding: 2px 8px;
+
+               .title {
+                    color: $ThemeTextColor;
+                    font-weight: 600;
+               }
+
+               .add-button {
+                    button {
+                         padding: 0px 20px;
+                         color: $ThemeTextColor;
+                         font-weight: 500;
+                         cursor: pointer;
+                    }
+               }
+          }
+
+          .unselected-space:hover {
+               transition: 300ms;
+               background-color: $ThemeBGColor;
+          }
+     }
+}
+
+.custom-select-input-field {
+     cursor: pointer;
+     background-color: $ThemeTextLightColor;
+}
+
+.title-with-action-field {
+     display: flex;
+     justify-content: space-between;
+}
+
+.calculated-spaces-row {
+     margin: 10px auto;
+     font-size: 18px;
+     font-weight: 600;
+     color: $ThemeTextColor;
+
+     .col-md-8,
+     .col-md-4 {
+          padding: 0px;
+     }
+}
+
+.view-space-button {
+     width: 100%;
+     padding: 12px;
+     font-size: 18px;
+     font-weight: 600;
+     color: $ThemeTextLightColor;
+     background-color: $ThemeColor;
+     border: 3px solid $ThemeColor;
+}
+
+.view-space-button:hover {
+     transition: 300ms;
+     color: $ThemeColor;
+     background-color: $ThemeBGColor;
+     border: 3px solid $ThemeColor;
+}
+
+.left-arrow-button {
+     cursor: pointer;
+     margin-right: 10px;
+     font-size: 24px;
+}
+
+.remove-padding {
+     padding: 0px;
+}
+
+.sqft-prefix {
+     font-weight: 600;
+     font-size: 14px;
+     color: $ThemeTextColor;
+}
+
+.custom-space-add-button {
+     margin: 6px 0px;
+     padding: 4px 26px;
+}
+
+.modal-content {
+     padding: 6px 16px;
+
+     .title-with-action-button {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 2px solid #c3c3c3;
+          padding: 6px 0px;
+
+          .title {
+               margin-top: auto;
+               margin-bottom: auto;
+               font-size: 24px;
+               font-weight: 600;
+               color: $ThemeTextColor;
+          }
+
+          .action-button {
+               font-size: 24px;
+               cursor: pointer;
+
+               i:hover {
+                    transition: 300ms;
+                    color: $ThemeColor;
+               }
+          }
+     }
+
+     .modal-body {
+          padding: 8px 4px;
+
+          .form-group {
+               margin-bottom: 8px;
+
+               .form-control {
+                    height: 40px !important;
+               }
+          }
+     }
+
+     .modal-footer {
+          padding: 8px 0px;
+
+          .custom-add-button {
+               color: $ThemeTextLightColor;
+               border: 3px solid $ThemeColor;
+               background-color: green;
+               padding: 4px 36px;
+               font-weight: 400;
+               font-size: 16px !important;
+          }
+
+          .custom-add-button:hover {
+               transition: 300ms;
+               color: $ThemeTextLightColor;
+               border: 3px solid $ThemeColor;
+               background-color: rgb(31, 94, 31);
+          }
+     }
+}

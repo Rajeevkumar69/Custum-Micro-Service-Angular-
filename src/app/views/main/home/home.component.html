@@ -1,0 +1,28 @@
+<div *ngIf="userDetails" class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <h1 class="text-center">:USER DATA:</h1>
+               <hr />
+          </div>
+          <div class="col-md-4">
+               <label>First Name</label>
+               <p>{{ userDetails.firstName }}</p>
+          </div>
+          <div class="col-md-4">
+               <label>Last Name</label>
+               <p>{{ userDetails.lastName }}</p>
+          </div>
+          <div class="col-md-4">
+               <label>Email</label>
+               <p>{{ userDetails.email }}</p>
+          </div>
+          <div class="col-md-4">
+               <label>Password</label>
+               <p>{{ userDetails.password }}</p>
+          </div>
+          <div class="col-md-4">
+               <label>Contact</label>
+               <p>{{ userDetails.contact }}</p>
+          </div>
+     </div>
+</div>

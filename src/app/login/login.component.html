@@ -1,0 +1,51 @@
+<div class="container">
+     <div class="row jc-center">
+          <div class="col-md-8"><br /><br /></div>
+
+          <div class="col-md-6">
+               <div class="card cms-card">
+                    <form [formGroup]="loginForm" (ngSubmit)="loginFormSubmission()">
+                         <div class="form-group">
+                              <h3 class="center">Login</h3>
+                              <hr />
+                         </div>
+
+                         <!-- LOGIN PAGE IMAGE -->
+                         <div class="form-group">
+                              <div class="login-image">
+                                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdG3W90OQA_7rN2uq6cTuitCCC488N4eLYDA&usqp=CAU" alt="...." />
+                              </div>
+                         </div>
+
+                         <!-- USER NAME -->
+                         <div class="form-group">
+                              <label>User Name</label>
+                              <input formControlName="userName" type="email" placeholder="Enter user name" class="form-control" />
+                              <span *ngIf="userName && userName.invalid && userName.touched" class="form-error">Please enter valid user name</span>
+                         </div>
+
+                         <!-- PASSWORD -->
+                         <div class="form-group">
+                              <label>Password</label>
+                              <input formControlName="password" type="password" placeholder="Password" class="form-control" />
+                              <span *ngIf="password && password.invalid && password.touched" class="form-error">Please enter your password</span>
+                         </div>
+
+                         <!-- LOGIN BUTTON -->
+                         <div class="form-group">
+                              <button type="submit" [disabled]="loginForm.invalid" class="btn btn-md btn-primary cms-button active">Login</button>
+                         </div>
+
+                         <!-- SIGN-UP LINK -->
+                         <div class="form-group">
+                              <span>Not Registered ?</span>
+                              <span>&nbsp;</span>
+                              <a [routerLink]="['../signup']">
+                                   <span class="create-account-link">Create Account</span>
+                              </a>
+                         </div>
+                    </form>
+               </div>
+          </div>
+     </div>
+</div>

@@ -1,0 +1,13 @@
+<h1 style="text-align: center">Here's a best wishes for you</h1>
+<hr />
+
+<button class="btn btn-primary" style="margin-left: 20px; border-radius: 50%" (click)="play()">Click</button> <br /><br /><br />
+
+<ng-container *ngIf="realMessage">
+     <style>
+          @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Passions+Conflict&display=swap');
+     </style>
+     <span>
+          <b style="color: seagreen; font-weight: 600px; font-size: 40px; font-family: 'East Sea Dokdo', cursive"> {{ '● ' + realMessage }} </b>
+     </span>
+</ng-container>

@@ -1,0 +1,8 @@
+{
+     "trailingComma": "none",
+     "tabWidth": 5,
+     "semi": true,
+     "singleQuote": true,
+     "printWidth": 300,
+     "formatOnSave": true
+}

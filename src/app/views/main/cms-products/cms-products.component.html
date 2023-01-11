@@ -1,0 +1,87 @@
+<div class="container">
+     <div class="row">
+          <div class="col-md-12 justify-content-center">
+               <h1 class="text-center text-info">Our Product's</h1>
+               <hr />
+          </div>
+
+          <!-- <div class="col-md-6">
+               <button class="btn btn-secondary" (click)="togglePage('ViewPage')">view Products</button>
+          </div>
+          <div class="col-md-6">
+               <button class="btn btn-primary" (click)="togglePage('addPage')">Add Products</button>
+          </div> -->
+
+          <!-- Product Heading -->
+     </div>
+     <ng-container *ngIf="viewProduct">
+          <div class="row">
+               <!-- <div class="col-md-12">
+                    <h1>View Product Page</h1>
+               </div> -->
+               <ng-container *ngIf="products && products.length > 0">
+                    <ng-container *ngFor="let item of products; index as productId">
+                         <div class="col-md-3 my-1">
+                              <div style="height: 100%" class="card p-3 m-2 bg-light">
+                                   <div class="text-center">
+                                        <img [src]="item.productImage" style="border-radius: 10px" class="img-fluid" alt=".." />
+                                   </div>
+                                   <br />
+                                   <div>
+                                        <b> {{ item.productName }}</b>
+                                   </div>
+
+                                   <div>{{ item.productDescription }}</div>
+                                   <div>{{ item.productRating }}</div>
+                                   <div>
+                                        <button class="btn btn-warning" (click)="removeProduct(productId)">
+                                             <i class="far fa-trash-alt"></i>
+                                             &nbsp;
+                                             <span>Remove Product</span>
+                                        </button>
+                                   </div>
+                              </div>
+                         </div>
+                    </ng-container>
+               </ng-container>
+          </div>
+     </ng-container>
+     <ng-container *ngIf="addProduct">
+          <div class="row">
+               <div class="col-md-12">
+                    <!--  -->
+                    <h1>Add Product Page</h1>
+                    <!--   -->
+                    <div class="col-md-8">
+                         <div class="col-md-12">
+                              <img style="height: 30vh; width: 30vh; border-radius: 20px" src="https://images.pexels.com/photos/11872137/pexels-photo-11872137.jpeg?auto=compress&cs=tinysrgb&w=600" alt="..." />
+                         </div>
+                         <br /><br />
+                         <!-- Form -->
+                         <form [formGroup]="productsForm" (ngSubmit)="addProducts()">
+                              <div class="form-group">
+                                   <input type="text" formControlName="productName" placeholder="Product Name" class="form-control" />
+                              </div>
+                              <div class="form-group">
+                                   <input type="text" placeholder="Enter Product Image path" class="form-control" formControlName="productImage" />
+                              </div>
+
+                              <!--  -->
+                              <div class="form-group">
+                                   <textarea placeholder="Product Description" formControlName="description" class="form-control"></textarea>
+                              </div>
+
+                              <!--  -->
+                              <div class="form-group">
+                                   <input type="text" placeholder="Product Rating" formControlName="rating" class="form-control" />
+                              </div>
+
+                              <div class="form-group">
+                                   <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                              </div>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </ng-container>
+</div>

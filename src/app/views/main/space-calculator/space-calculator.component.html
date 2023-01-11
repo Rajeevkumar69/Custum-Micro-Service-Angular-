@@ -1,0 +1,291 @@
+<div class="main-section">
+     <div class="row">
+          <div class="col-md-12">
+               <div class="height-2"></div>
+          </div>
+     </div>
+     <div class="row">
+          <div class="col-md-12">
+               <h4>Enter your space considerations and find out how much space your company needs!</h4>
+               <hr />
+          </div>
+     </div>
+     <div class="height-5"></div>
+     <div class="row">
+          <div class="col-md-7">
+               <div class="card space-form-card">
+                    <div class="form-group">
+                         <h5 class="form-bold-title">
+                              <b>Space Considerations</b>
+                         </h5>
+                    </div>
+                    <div class="form-group">
+                         <label for="number-of-employees">
+                              <b>Number Of Employees</b>
+                         </label>
+                         <input type="number" [min]="0" [(ngModel)]="numberOfEmployees" class="form-control" id="number-of-employees" placeholder="Enter number of employees" />
+                    </div>
+                    <div class="form-group">
+                         <label for="space-per-employees">
+                              <b>Space Per Employees</b>
+                         </label>
+                         <select [(ngModel)]="spacePerEmployee" name="" id="" class="form-control">
+                              <option [value]="100">Economy - 100 SQFT</option>
+                              <option [value]="150">Average - 150 SQFT</option>
+                              <option [value]="200">Spacious - 200 SQFT</option>
+                         </select>
+                         <div class="select-icon">
+                              <span>
+                                   <i class="fas fa-chevron-down"></i>
+                              </span>
+                         </div>
+                    </div>
+                    <div class="form-group">
+                         <div class="height-3"></div>
+                         <h5 class="form-bold-title">
+                              <b>What other spaces do you need?</b>
+                         </h5>
+                    </div>
+                    <div class="form-group">
+                         <div class="row">
+                              <div class="col-md-5">
+                                   <b>Space Name</b>
+                              </div>
+                              <div class="col-md-3 remove-padding">
+                                   <b>Space Size</b>
+                              </div>
+                              <div class="col-md-4">
+                                   <b>No of Units</b>
+                              </div>
+                         </div>
+                         <ng-container *ngFor="let space of configuration.scVisibleSpaces">
+                              <div class="row space-row">
+                                   <div class="col-md-5 space-title">
+                                        <div class="title">
+                                             <b> {{ space.name }} </b>
+                                        </div>
+                                        <div class="remove-icon">
+                                             <span (click)="removeSpace(space.spaceId)">
+                                                  <i class="fas fa-trash-alt"></i>
+                                             </span>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-3 remove-padding">
+                                        <div class="input-group">
+                                             <input type="number" [(ngModel)]="space.spaceSize" [value]="space.spaceSize" class="form-control fix-height" />
+                                             <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                       <span class="sqft-prefix"> SQFT </span>
+                                                  </span>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                        <div class="input-group">
+                                             <div class="input-group-prepend">
+                                                  <span (click)="decreaseSpace(space.spaceId)" class="input-group-text on-hover">
+                                                       <span class="plus-minus-icon">
+                                                            <i class="fas fa-minus"></i>
+                                                       </span>
+                                                  </span>
+                                             </div>
+                                             <input type="number" [(ngModel)]="space.noOfUnits" [value]="space.noOfUnits" class="form-control up-down-form-control" />
+                                             <div class="input-group-append">
+                                                  <span (click)="increaseSpace(space.spaceId)" class="input-group-text on-hover">
+                                                       <span class="plus-minus-icon">
+                                                            <i class="fas fa-plus"></i>
+                                                       </span>
+                                                  </span>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </ng-container>
+                    </div>
+                    <div class="form-group">
+                         <div class="custom-select-icon">
+                              <span>
+                                   <i class="fas fa-chevron-down"></i>
+                              </span>
+                         </div>
+                         <span #customSelectButton (click)="showAddSpaceOption()">
+                              <input type="text" value="ADD" [disabled]="true" class="form-control custom-select-input-field" />
+                         </span>
+                         <div id="custom-select-option" class="custom-select-option">
+                              <div #customSelectCard class="card select-option-card">
+                                   <ng-container *ngFor="let space of configuration.scHideSpaces">
+                                        <div class="unselected-space" (click)="addSpace(space.spaceId)">
+                                             <div class="title">
+                                                  <span>
+                                                       {{ space.name }}
+                                                  </span>
+                                             </div>
+                                             <div class="add-button">
+                                                  <button class="btn btn-light">
+                                                       <span style="font: bold">ADD</span>
+                                                       <i style="margin-left: 10px" class="fas fa-plus"></i>
+                                                  </button>
+                                             </div>
+                                        </div>
+                                   </ng-container>
+                                   <div class="unselected-space" (click)="hideAddSpaceOption()" data-toggle="modal" data-target="#custom-space-modal">
+                                        <div class="title">
+                                             <span> Add Your Custom Space </span>
+                                        </div>
+                                        <div class="add-button">
+                                             <button class="btn btn-light" (click)="hideAddSpaceOption()">
+                                                  <span style="font: bold">ADD</span>
+                                                  <i style="margin-left: 10px" class="fas fa-plus"></i>
+                                             </button>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="form-group">
+                         <div class="row">
+                              <div class="col-md-12">
+                                   <div class="height-5"></div>
+                              </div>
+                              <div class="col-md-12 text-right">
+                                   <button (click)="viewSpace(true)" type="button" class="btn btn-danger px-4">
+                                        <span class="button-text"> Calculate Space Estimate </span>
+                                   </button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div class="col-md-5">
+               <ng-container *ngIf="!isSpaceCalculated">
+                    <div class="row">
+                         <div class="col-md-12">
+                              <h3 class="text-center form-bold-title-2">
+                                   <b>How SquareFoot Works!</b>
+                              </h3>
+                              <div class="row">
+                                   <div class="col-md-12 text-center custom-image">
+                                        <img src="https://images.pexels.com/photos/4386341/pexels-photo-4386341.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                                   </div>
+                                   <div class="col-md-12">
+                                        <p class="text-center how-works-text">Browse office spaces, we get the best matches.</p>
+                                   </div>
+                                   <div class="col-md-12 text-center custom-image">
+                                        <img src="https://media.istockphoto.com/id/1363697808/photo/man-and-woman-having-a-meeting.jpg?b=1&s=612x612&w=0&k=20&c=O3MRk4eelVe8a199Z9iX8HYjRf3sSCAY1LhK4aZ3JCA=" alt="" />
+                                   </div>
+                                   <div class="col-md-12">
+                                        <p class="text-center how-works-text">Tours for your favorite spaces with our brokers.</p>
+                                   </div>
+                                   <div class="col-md-12 text-center custom-image">
+                                        <img src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                                   </div>
+                                   <div class="col-md-12">
+                                        <p class="text-center how-works-text">We get the best deal and help you move in.</p>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </ng-container>
+               <ng-container *ngIf="isSpaceCalculated">
+                    <div class="row">
+                         <div class="col-md-12">
+                              <div class="row">
+                                   <div class="col-md-12">
+                                        <div class="title-with-action-field">
+                                             <div class="title">
+                                                  <h3 class="form-bold-title-2">
+                                                       <span (click)="viewSpace(false)" class="left-arrow-button">
+                                                            <i class="fas fa-arrow-left"></i>
+                                                       </span>
+                                                       <b>Recommended space :-</b>
+                                                  </h3>
+                                             </div>
+                                             <div class="action-field">
+                                                  <h3 class="form-bold-title-2">
+                                                       <b>{{ getTotalCalculatedSpaceValue() }} SQFT</b>
+                                                  </h3>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="row">
+                                   <div class="col-md-12">
+                                        <div class="row calculated-spaces-row">
+                                             <div class="col-md-8">Work Space</div>
+                                             <div class="col-md-4">
+                                                  <div class="text-right">
+                                                       <span> {{ getCurrentWorkSpace() }} </span>
+                                                       <span> SQFT</span>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <ng-container *ngFor="let space of configuration.scVisibleSpaces">
+                                             <div class="row calculated-spases-row">
+                                                  <div class="col-md-8">
+                                                       {{ space.name }}
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <div class="text-right">
+                                                            <span>{{ getSpaceValue(space.spaceId) }}</span>
+                                                            <span> SQFT</span>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </ng-container>
+                                   </div>
+                                   <div class="col-md-12">
+                                        <button class="btn btn-light view-space-button">
+                                             <span> View Eligible Space In Your City </span>
+                                        </button>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </ng-container>
+          </div>
+     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="custom-space-modal" tabindex="-1" role="dialog" aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+               <form [formGroup]="newSpaceForm" (ngSubmit)="addCustomSpace()">
+                    <div class="title-with-action-button">
+                         <div class="title">
+                              <span> Add Your Custom Space </span>
+                         </div>
+                         <div class="action-button">
+                              <span id="close-modal-button" class="close-icon" data-dismiss="modal">
+                                   <i class="fas fa-times"></i>
+                              </span>
+                         </div>
+                    </div>
+                    <div class="modal-body">
+                         <div class="form-group">
+                              <label for="new-space-name">
+                                   <b>New Space Name</b>
+                              </label>
+                              <input type="text" formControlName="spaceName" class="form-control" id="new-space-name" placeholder="Enter new space name" />
+                         </div>
+                         <div class="form-group">
+                              <label for="new-space-size">
+                                   <b>Space Size (SQFT)</b>
+                              </label>
+                              <input type="number" formControlName="spaceSize" [min]="0" class="form-control" id="new-space-size" placeholder="Enter space size" />
+                         </div>
+                         <div class="form-group">
+                              <label for="no-of-units">
+                                   <b>No Of Units</b>
+                              </label>
+                              <input type="number" formControlName="noOfUnits" [min]="0" class="form-control" id="no-of-units" placeholder="Enter number of units" />
+                         </div>
+                    </div>
+                    <div class="modal-footer">
+                         <button type="submit" [disabled]="newSpaceForm.invalid" class="btn btn-md custom-add-button">ADD</button>
+                    </div>
+               </form>
+          </div>
+     </div>
+</div>
+<app-footer></app-footer>

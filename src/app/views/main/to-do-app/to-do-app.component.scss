@@ -1,0 +1,55 @@
+.submit-button {
+     display: flex;
+     width: 100%;
+     justify-content: flex-end;
+     button {
+          padding: 6px 30px;
+     }
+}
+
+.task-card {
+     background-color: rgb(219, 235, 235);
+}
+
+table {
+     border-collapse: separate;
+     border-spacing: 0px 12px;
+     tr {
+          th,
+          td {
+               margin: 16px 0px;
+               padding-bottom: 4px;
+               border-bottom: 1px solid #d4d4d4;
+          }
+          .t-status {
+               text-align: center;
+          }
+          .c-action {
+               text-align: center;
+               input {
+                    height: 20px;
+                    width: 20px;
+               }
+          }
+     }
+}
+.title-and-time {
+     display: flex;
+     justify-content: space-between;
+     .title {
+          color: rgb(82, 82, 82);
+     }
+     .time {
+          color: rgb(82, 82, 82);
+     }
+}
+
+.add-task-button {
+     font-size: 24px;
+     color: rgb(82, 82, 82);
+     &:hover {
+          cursor: pointer;
+          transition: 300ms;
+          color: rgb(0, 128, 179);
+     }
+}

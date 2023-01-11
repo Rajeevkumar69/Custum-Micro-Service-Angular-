@@ -1,0 +1,27 @@
+<div *ngIf="taskDetails" class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <div class="card cms-card">
+                    <div class="col-md-6">
+                         <p>
+                              Title <br />
+
+                              {{ taskDetails.taskTitle }}
+                         </p>
+                    </div>
+                    <div class="col-md-6">
+                         <p>
+                              Description <br />
+                              {{ taskDetails.taskDescription }}
+                         </p>
+                    </div>
+                    <div class="col-md-6">
+                         <p>
+                              Validity <br />
+                              {{ taskDetails.taskValidity }}
+                         </p>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

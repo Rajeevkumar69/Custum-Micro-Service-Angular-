@@ -1,0 +1,124 @@
+<div class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <br />
+          </div>
+     </div>
+     <div class="row">
+          <div class="col-md-12">
+               <div class="title-and-time">
+                    <div class="title">
+                         <h4>
+                              My Tasks &nbsp;
+                              <span (click)="toggleForm()" title="Add New Task" class="add-task-button">
+                                   <i class="fas fa-plus-circle"></i>
+                              </span>
+                         </h4>
+                    </div>
+                    <div class="time">
+                         <b>{{ LocalDate }} {{ date | date : 'EEEE' }}</b>
+                    </div>
+               </div>
+               <hr />
+          </div>
+     </div>
+     <div *ngIf="isVisibleForm" class="row justify-content-center">
+          <div class="col-md-8">
+               <div class="card cms-card task-card">
+                    <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+                         <div class="form-group">
+                              <h4>Add New Task</h4>
+                              <hr />
+                         </div>
+                         <div class="form-group">
+                              <input type="text" formControlName="taskTitle" class="form-control" placeholder="Enter Task Title" aria-label="Add task" aria-describedby="button-addon2" />
+                              <span *ngIf="taskTitle && taskTitle.invalid && taskTitle.touched" class="form-error">This field is required</span>
+                         </div>
+                         <div class="form-group">
+                              <input type="text" formControlName="taskDescription" class="form-control" placeholder="Enter Task Description" aria-label="Add task" aria-describedby="button-addon2" />
+                              <span *ngIf="taskDescription && taskDescription.invalid && taskDescription.touched" class="form-error"> This field is required </span>
+                         </div>
+                         <div class="form-group">
+                              <input type="datetime-local" formControlName="taskValidity" class="form-control" placeholder="Add Task Validity" aria-label="Add task" aria-describedby="button-addon2" />
+                              <span *ngIf="taskValidity && taskValidity.invalid && taskValidity.touched" class="form-error">This field is required</span>
+                         </div>
+                         <div class="form-group">
+                              <div class="submit-button">
+                                   <button class="btn btn-primary btn-md">
+                                        <i class="fas fa-plus"></i>
+                                        &nbsp;
+                                        <span> ADD </span>
+                                   </button>
+                              </div>
+                         </div>
+                    </form>
+               </div>
+          </div>
+          <br />
+     </div>
+     <div *ngIf="dummyTask.taskList.length > 0" class="row">
+          <br />
+          <div class="col-md-12">
+               <div class="card cms-card">
+                    <table>
+                         <tr>
+                              <th class="table-header t-title">
+                                   <span> Task Title </span>
+                              </th>
+                              <th class="table-header t-desc">
+                                   <span> Task Description </span>
+                              </th>
+                              <th class="table-header t-status">
+                                   <span> Is Completed </span>
+                              </th>
+                              <th class="table-header t-validity">
+                                   <span> Task Validity </span>
+                              </th>
+                              <th class="table-header c-time">
+                                   <span> Created Time </span>
+                              </th>
+                              <th class="table-header c-action">
+                                   <span> Action </span>
+                              </th>
+                         </tr>
+                         <ng-container *ngFor="let task of dummyTask.taskList">
+                              <tr>
+                                   <td class="table-column t-title">
+                                        <span> {{ task.taskTitle }} </span>
+                                   </td>
+                                   <td class="table-column t-desc">
+                                        <span> {{ task.taskDescription }} </span>
+                                   </td>
+                                   <td class="table-column t-status">
+                                        <span> {{ task.isCompleted }} </span>
+                                   </td>
+                                   <td class="table-column t-validity">
+                                        <span> {{ task.taskValidity | date }} </span>
+                                   </td>
+                                   <td class="table-column c-time">
+                                        <span> {{ task.createdAt | date }} </span>
+                                   </td>
+                                   <td class="table-column c-action">
+                                        <input type="checkbox" />
+                                   </td>
+                              </tr>
+                         </ng-container>
+                    </table>
+               </div>
+          </div>
+     </div>
+     <div class="row">
+          <div class="col-md-12">
+               <br />
+               <br />
+               <br />
+               <br />
+               <br />
+          </div>
+     </div>
+</div>
+<a routerLink="to-do-data">View Task</a>
+
+<router-outlet></router-outlet>
+
+<app-to-do-footer></app-to-do-footer>

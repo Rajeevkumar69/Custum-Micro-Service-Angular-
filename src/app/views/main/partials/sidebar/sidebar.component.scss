@@ -1,0 +1,15 @@
+.sidebar-button {
+     padding: 6px 12px;
+     i {
+          color: white;
+     }
+     a {
+          color: #ffff;
+          font-weight: 600;
+          text-decoration: none;
+          &:hover {
+               transition: 100ms;
+               color: rgb(196, 196, 196);
+          }
+     }
+}
