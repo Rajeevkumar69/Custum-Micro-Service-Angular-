@@ -8,11 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { BroadcastService } from './shared/services/broadcast.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
      declarations: [AppComponent, SignupComponent, NoPageFoundComponent, LoginComponent],
-     imports: [BrowserModule, AppRoutingModule, RouterModule, ReactiveFormsModule],
-     providers: [],
+     imports: [BrowserModule, AppRoutingModule, RouterModule, ReactiveFormsModule, HttpClientModule],
+     providers: [BroadcastService],
      bootstrap: [AppComponent]
 })
 export class AppModule {}

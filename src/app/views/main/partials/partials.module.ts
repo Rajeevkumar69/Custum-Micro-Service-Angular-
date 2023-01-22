@@ -5,13 +5,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MouseConfigComponent } from './additional/mouse-config/mouse-config.component';
+import { ComputerConfigComponent } from './additional/computer-config/computer-config.component';
 
 // prettier-ignore
 @NgModule({
      declarations: [
           FooterbarComponent, 
           NavbarComponent, 
-          SidebarComponent
+          SidebarComponent, MouseConfigComponent, ComputerConfigComponent
      ],
      imports: [
           CommonModule, 
@@ -22,7 +24,9 @@ import { RouterModule } from '@angular/router';
      exports: [
           FooterbarComponent, 
           NavbarComponent, 
-          SidebarComponent
+          SidebarComponent,
+          MouseConfigComponent,
+          ComputerConfigComponent
      ]
 })
 export class PartialsModule {}

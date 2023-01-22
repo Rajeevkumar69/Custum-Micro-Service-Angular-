@@ -1,0 +1,227 @@
+<div class="container">
+     &nbsp;
+     <h3 class="text-center">School Admission Form</h3>
+     <hr />
+     <div class="row">
+          <div class="col-md-6">
+               <form [formGroup]="studentInfo" (ngSubmit)="submitForm()">
+                    <div class="row">
+                         <!-- ----------------- -->
+                         <div class="form-group col-md-6">
+                              <label>Enter first name</label>
+                              <input type="text" formControlName="firstName" (blur)="displaySingleFormError(studentInfo)" class="form-control" placeholder="Enter your first name" />
+
+                              <span class="form-error" *ngIf="formErrors.firstName">{{ formErrors.firstName }}</span>
+                         </div>
+                         <div class="form-group col-md-6">
+                              <label>Enter last name</label>
+                              <input formControlName="lastName" type="text" (blur)="displaySingleFormError(studentInfo)" class="form-control" placeholder="Enter your last name" />
+                              <span class="form-error" *ngIf="formErrors.lastName">{{ formErrors.lastName }}</span>
+                         </div>
+                         <div class="form-group col-md-6">
+                              <label>Age</label>
+                              <input formControlName="age" type="text" (blur)="displaySingleFormError(studentInfo)" class="form-control" placeholder="Age" />
+                              <span class="form-error" *ngIf="formErrors.age">{{ formErrors.age }}</span>
+                         </div>
+                         <div class="form-group col-md-6">
+                              <label>email</label>
+                              <input formControlName="email" type="text" (blur)="displaySingleFormError(studentInfo)" placeholder="Email id" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.email">{{ formErrors.email }}</span>
+                         </div>
+                         <div class="form-group col-md-6">
+                              <label>Contact</label>
+                              <input formControlName="contact" type="text" (blur)="displaySingleFormError(studentInfo)" class="form-control" placeholder="Contact" />
+                              <span class="form-error" *ngIf="formErrors.contact">{{ formErrors.contact }}</span>
+                         </div>
+                         <div class="form-group col-md-6">
+                              <label>Address</label>
+                              <input formControlName="address" type="text" (blur)="displaySingleFormError(studentInfo)" class="form-control" placeholder="Address" />
+                              <span class="form-error" *ngIf="formErrors.address">{{ formErrors.address }}</span>
+                         </div>
+                         <!-- ------------- -->
+                         <div formGroupName="studentAddress" class="col-md-6">
+                              <div class="form-group">
+                                   <label>permanent Address</label>
+                                   <input formControlName="pAddress" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" type="text" class="form-control" placeholder="permanent Address" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.pAddress">{{ formErrors.studentAddress.pAddress }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Pin code</label>
+                                   <input formControlName="pinCode" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" type="text" class="form-control" placeholder="Pin code" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.pinCode">{{ formErrors.studentAddress.pinCode }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Street</label>
+                                   <input formControlName="street" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Street" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.street">{{ formErrors.studentAddress.street }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>District</label>
+                                   <input formControlName="distric" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="District" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.distric">{{ formErrors.studentAddress.distric }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>State</label>
+                                   <input formControlName="state" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="State" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.state">{{ formErrors.studentAddress.state }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Country</label>
+                                   <input formControlName="country" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Country" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.country">{{ formErrors.studentAddress.country }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Father name</label>
+                                   <input formControlName="fName" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Father name" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.fName">{{ formErrors.studentAddress.fName }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Father contact</label>
+                                   <input formControlName="fContact" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Father contact" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.fContact">{{ formErrors.studentAddress.fContact }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Father occupation</label>
+                                   <input formControlName="fOccupoation" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Father occupation" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.fOccupoation">{{ formErrors.studentAddress.fOccupoation }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Father email</label>
+                                   <input formControlName="fEmail" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Father email" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.fEmail">{{ formErrors.studentAddress.fEmail }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Mother name</label>
+                                   <input formControlName="mName" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Mother name" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.mName">{{ formErrors.studentAddress.mName }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Mother contact</label>
+                                   <input formControlName="mContact" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Mother contact" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.mContact">{{ formErrors.studentAddress.mContact }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Mother occupation</label>
+                                   <input formControlName="mOccupation" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Mother occupation" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.mOccupation">{{ formErrors.studentAddress.mOccupation }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Mother email</label>
+                                   <input formControlName="mEmail" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'studentAddress')" class="form-control" placeholder="Mother email" />
+                                   <span class="form-error" *ngIf="formErrors.studentAddress && formErrors.studentAddress.mEmail">{{ formErrors.studentAddress.mEmail }}</span>
+                              </div>
+                         </div>
+
+                         <!-- --------- -->
+                         <div formGroupName="collegeDetails" class="col-md-6">
+                              <div class="form-group">
+                                   <label>College Name</label>
+                                   <input formControlName="collegeName" (blur)="displayNestedSingleFormError(studentInfo, 'collegeDetails')" type="text" class="form-control" placeholder="College name" />
+                                   <span class="form-error" *ngIf="formErrors.collegeDetails && formErrors.collegeDetails.collegeName">{{ formErrors.collegeDetails.collegeName }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Campus Name</label>
+                                   <input formControlName="collegeCampus" (blur)="displayNestedSingleFormError(studentInfo, 'collegeDetails')" type="text" class="form-control" placeholder="Campus Name" />
+                                   <span class="form-error" *ngIf="formErrors.collegeDetails && formErrors.collegeDetails.collegeCampus">{{ formErrors.collegeDetails.collegeCampus }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>College area</label>
+                                   <input formControlName="collegeArea" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'collegeDetails')" class="form-control" placeholder="College area" />
+                                   <span class="form-error" *ngIf="formErrors.collegeDetails && formErrors.collegeDetails.collegeArea">{{ formErrors.collegeDetails.collegeArea }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Principle name</label>
+                                   <input formControlName="principleName" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'collegeDetails')" class="form-control" placeholder="Principle name" />
+                                   <span class="form-error" *ngIf="formErrors.collegeDetails && formErrors.collegeDetails.principleName">{{ formErrors.collegeDetails.principleName }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Principle email</label>
+                                   <input formControlName="principleEmail" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'collegeDetails')" class="form-control" placeholder="Principle email" />
+                                   <span class="form-error" *ngIf="formErrors.collegeDetails && formErrors.collegeDetails.principleEmail">{{ formErrors.collegeDetails.principleEmail }}</span>
+                              </div>
+                              <div class="from-group">
+                                   <label>Number of classroom</label>
+                                   <input formControlName="totalClass" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'collegeDetails')" class="form-control" placeholder="Number of classroom" />
+                                   <span class="form-error" *ngIf="formErrors.collegeDetails && formErrors.collegeDetails.totalClass">{{ formErrors.collegeDetails.totalClass }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Number of professor</label>
+                                   <input formControlName="totalProfessor" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'collegeDetails')" class="form-control" placeholder="Number of professor" />
+                                   <span class="form-error" *ngIf="formErrors.collegeDetails && formErrors.collegeDetails.totalProfessor">{{ formErrors.collegeDetails.totalProfessor }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Number of labs</label>
+                                   <input formControlName="totalLab" type="text" (blur)="displayNestedSingleFormError(studentInfo, 'collegeDetails')" class="form-control" placeholder="number of labs" />
+                                   <span class="form-error" *ngIf="formErrors.collegeDetails && formErrors.collegeDetails.totalLab">{{ formErrors.collegeDetails.totalLab }}</span>
+                              </div>
+
+                              <!-- --------------- -->
+                              <div formGroupName="labs">
+                                   <div class="form-group">
+                                        <label>Computer lab</label>
+                                        <input formControlName="computerLab" type="text" class="form-control" placeholder="Computer lab" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Chemistry Lab</label>
+                                        <input formControlName="cheLab" type="text" class="form-control" placeholder="Chemistry lab" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Physics Lab</label>
+                                        <input formControlName="phyLab" type="text" class="form-control" placeholder="Physics lab" />
+                                   </div>
+                              </div>
+                              <!-- ---------------------- -->
+                         </div>
+                         <div formGroupName="idCard" class="col-md-6">
+                              <div class="form-group">
+                                   <label>Student name in Capital letter</label>
+                                   <input type="text" formControlName="sName" (blur)="displayNestedSingleFormError(studentInfo, 'idCard')" class="form-control" placeholder="Enter full name in capital letter" />
+                                   <span class="form-error" *ngIf="formErrors.idCard && formErrors.idCard.sName">{{ formErrors.idCard.sName }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Course</label>
+                                   <input type="text" formControlName="course" (blur)="displayNestedSingleFormError(studentInfo, 'idCard')" class="form-control" placeholder="Enter course" />
+                                   <span class="form-error" *ngIf="formErrors.idCard && formErrors.idCard.course">{{ formErrors.idCard.course }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Department</label>
+                                   <input type="text" formControlName="department" (blur)="displayNestedSingleFormError(studentInfo, 'idCard')" class="form-control" placeholder="Enter department" />
+                                   <span class="form-error" *ngIf="formErrors.idCard && formErrors.idCard.department">{{ formErrors.idCard.department }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Batch</label>
+                                   <input type="text" formControlName="batch" (blur)="displayNestedSingleFormError(studentInfo, 'idCard')" class="form-control" placeholder="Enter batch" />
+                                   <span class="form-error" *ngIf="formErrors.idCard && formErrors.idCard.batch">{{ formErrors.idCard.batch }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Blood-group</label>
+                                   <input type="text" formControlName="bloodGroup" (blur)="displayNestedSingleFormError(studentInfo, 'idCard')" class="form-control" placeholder="Enter bloodgroup" />
+                                   <span class="form-error" *ngIf="formErrors.idCard && formErrors.idCard.bloodGroup">{{ formErrors.idCard.bloodGroup }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Prent's contact</label>
+                                   <input type="text" formControlName="pContact" (blur)="displayNestedSingleFormError(studentInfo, 'idCard')" class="form-control" placeholder="Enter parent contact" />
+                                   <span class="form-error" *ngIf="formErrors.idCard && formErrors.idCard.pContact">{{ formErrors.idCard.pContact }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Address</label>
+                                   <input type="text" formControlName="idAddress" (blur)="displayNestedSingleFormError(studentInfo, 'idCard')" class="form-control" placeholder="Enter address" />
+                                   <span class="form-error" *ngIf="formErrors.idCard && formErrors.idCard.idAddress">{{ formErrors.idCard.idAddress }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Hall ticket number</label>
+                                   <input type="text" formControlName="hallTicket" (blur)="displayNestedSingleFormError(studentInfo, 'idCard')" class="form-control" placeholder="Enter hall ticket" />
+                                   <span class="form-error" *ngIf="formErrors.idCard && formErrors.idCard.hallTicket">{{ formErrors.idCard.hallTicket }}</span>
+                              </div>
+                         </div>
+                         <br />
+                         <!-- ---------------- -->
+
+                         <div class="form-group col-md-12">
+                              <button type="submit" class="btn-md btn btn-primary">Submit</button>
+                         </div>
+                    </div>
+               </form>
+          </div>
+     </div>
+</div>

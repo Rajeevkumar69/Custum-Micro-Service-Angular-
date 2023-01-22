@@ -1,0 +1,59 @@
+<div class="container">
+     <div class="row justify-content-center">
+          <div class="col-md-8">
+               <br /><br />
+               <div class="card cms-card">
+                    <h3>Add Your Information</h3>
+                    <hr />
+                    <form [formGroup]="userInformationForm" (ngSubmit)="submitUserInformation()">
+                         <div class="form-group">
+                              <label>Enter User Name</label>
+                              <input type="text" formControlName="name" placeholder="Enter Name" class="form-control" />
+                              <span *ngIf="name && name.invalid && name.touched" class="form-error">Please enter valid Data</span>
+                         </div>
+                         <div class="form-group">
+                              <label>Enter Age</label>
+                              <input type="text" formControlName="age" placeholder="Enter Age" class="form-control" />
+                              <span *ngIf="age && age.invalid && age.touched" class="form-error">Please enter valid Data</span>
+                         </div>
+                         <div class="form-group">
+                              <label>Enter Email</label>
+                              <input type="text" formControlName="email" placeholder="Enter Email" class="form-control" />
+                              <span *ngIf="email && email.invalid && email.touched" class="form-error">Please enter valid Data</span>
+                         </div>
+                         <div class="form-group">
+                              <label>Enter Contact</label>
+                              <input type="text" formControlName="contact" placeholder="Enter Contact" class="form-control" />
+                              <span *ngIf="contact && contact.invalid && contact.touched" class="form-error">Please enter valid Data</span>
+                         </div>
+                         <div class="form-group">
+                              <label>Enter Address</label>
+                              <input type="text" formControlName="address" placeholder="Enter Address" class="form-control" />
+                              <span *ngIf="address && address.invalid && address.touched" class="form-error">Please enter valid Data</span>
+                         </div>
+                         <div class="form-group">
+                              <ng-container *ngIf="isUpdateMode">
+                                   <button type="button" (click)="cancelUpdate()" class="btn btn-danger btn-md">
+                                        <span>Cancel</span>
+                                   </button>
+                                   &nbsp;
+                                   <button type="submit" class="btn btn-warning btn-md">
+                                        <span>Update</span>
+                                   </button>
+                              </ng-container>
+                              <ng-container *ngIf="!isUpdateMode">
+                                   <button type="submit" class="btn btn-success btn-md">
+                                        <span>Create</span>
+                                   </button>
+                                   &nbsp;
+                                   <button type="button" (click)="cancelCreate()" class="btn btn-danger btn-md">
+                                        <span>Cancel</span>
+                                   </button>
+                              </ng-container>
+                         </div>
+                    </form>
+               </div>
+               <br /><br />
+          </div>
+     </div>
+</div>

@@ -1,0 +1,54 @@
+<br />
+<div class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <div class="title-and-action-button">
+                    <div class="title">
+                         <h2>User Information</h2>
+                    </div>
+                    <div class="action-button">
+                         <button (click)="addUser()" class="btn btn-md btn-success">
+                              <i class="fas fa-plus"> </i>
+                              &nbsp;
+                              <span>Add User</span>
+                         </button>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class="row">
+          <div class="col-md-12">
+               <table class="table table-light">
+                    <thead class="thead-light">
+                         <tr>
+                              <th>Sr.Number</th>
+                              <th>Name</th>
+                              <th>Age</th>
+                              <th>Email</th>
+                              <th>Address</th>
+                              <th>Contact</th>
+                              <th class="text-center">Action</th>
+                         </tr>
+                    </thead>
+                    <tbody class="displayData" *ngFor="let item of userDetails; index as srNumber">
+                         <td>{{ srNumber + 1 }}</td>
+                         <td>{{ item.name }}</td>
+                         <td>{{ item.age }}</td>
+                         <td>{{ item.email }}</td>
+                         <td>{{ item.address }}</td>
+                         <td>{{ item.contact }}</td>
+                         <td class="text-center">
+                              <button (click)="editUser(item)" class="btn btn-danger btn-md">
+                                   <i class="fas fa-pen"></i>
+                              </button>
+                              &nbsp;
+                              <button (click)="removeUser(item.userId)" class="btn btn-primary btn-md">
+                                   <i class="fas fa-trash-alt"></i>
+                              </button>
+                         </td>
+                    </tbody>
+               </table>
+          </div>
+     </div>
+</div>
+<!-- <button (click)="callData()" class="btn btn-md btn-primary">Click</button> -->

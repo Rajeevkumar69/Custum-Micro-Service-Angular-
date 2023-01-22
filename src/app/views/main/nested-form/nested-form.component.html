@@ -1,0 +1,92 @@
+<div class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <h3>Reactive Nested Form</h3>
+               <hr />
+          </div>
+          <div class="col-md-6">
+               <div class="card cms-card">
+                    <form [formGroup]="schoolInfo" (ngSubmit)="schoolInfoSubmit()">
+                         <div class="form-group">
+                              <label>Enter school name</label>
+                              <input type="text" formControlName="schoolName" placeholder="Enter School Name" class="form-control" />
+                         </div>
+                         <div class="form-group">
+                              <label>Enter school address</label>
+                              <input type="text" formControlName="schoolAddress" placeholder="Enter Address" class="form-control" />
+                         </div>
+
+                         <div formGroupName="principleInfo">
+                              <div class="form-group">
+                                   <label>Enter principle name</label>
+                                   <input type="text" formControlName="principleName" placeholder="Enter School Principle Name" class="form-control" />
+                              </div>
+                              <div class="form-group">
+                                   <label>Enter principle age</label>
+                                   <input type="text" formControlName="principleAge" placeholder="Enter Principle Age" class="form-control" />
+                              </div>
+                         </div>
+
+                         <div formGroupName="campusInfo">
+                              <div class="form-group">
+                                   <label>Enter campus size</label>
+                                   <input type="text" formControlName="campusSize" placeholder="Enter Campus Size" class="form-control" />
+                              </div>
+
+                              <div formGroupName="campusDetails">
+                                   <div class="form-group">
+                                        <label>Enter number of class</label>
+                                        <input type="text" formControlName="NoOfClass" placeholder="Enter Number of Class" class="form-control" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Enter ground size</label>
+                                        <input type="text" formControlName="groundSize" placeholder="Enter Campus Ground Size" class="form-control" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Enter park size</label>
+                                        <input type="text" formControlName="parkSize" placeholder="Enter Campus Park Size" class="form-control" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Enter number of girl's hostel</label>
+                                        <input type="text" formControlName="noOfGirlHostel" placeholder="Enter Number of Girl's Hostel" class="form-control" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Enter number of boy's hostel</label>
+                                        <input type="text" formControlName="noOfBoyHostel" placeholder="Enter Number of Boy's Hostel" class="form-control" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Enter number of party hall</label>
+                                        <input type="text" formControlName="noOfPartyHall" placeholder="Enter Number of Party Hall" class="form-control" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Enter number of meeting hall</label>
+                                        <input type="text" formControlName="noOfMeetingHall" placeholder="Enter Number of Meeting Hall" class="form-control" />
+                                   </div>
+                                   <div class="form-group">
+                                        <label>Enter number of laboratory</label>
+                                        <input type="text" formControlName="noOfLab" placeholder="Enter Number of Laboratory" class="form-control" />
+                                   </div>
+                                   <div formGroupName="specificLab">
+                                        <div class="form-group">
+                                             <label>Enter number of physics lab</label>
+                                             <input type="text" formControlName="noOfPhyLab" placeholder="Enter Number of Physics Laboratory" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                             <label>Enter number of chemistry lab</label>
+                                             <input type="text" formControlName="noOfCheLab" placeholder="Enter Number of Chemistry Laboratory" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                             <label>Enter number of computer lab</label>
+                                             <input type="text" formControlName="noOfCmpLab" placeholder="Enter Number of Computer Laboratory" class="form-control" />
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="form-group">
+                              <button type="submit" class="btn btn-md btn-primary">Submit</button>
+                         </div>
+                    </form>
+               </div>
+          </div>
+     </div>
+</div>

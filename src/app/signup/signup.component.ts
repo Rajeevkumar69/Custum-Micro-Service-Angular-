@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormHelper } from '../shared/form-helper/form-helper';
+import { GlobalFormValidator } from '../shared/form-validators/global-form-validator';
+import { FormModel } from '../shared/models/form-model';
 
 @Component({
      selector: 'app-signup',
@@ -8,26 +11,32 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
      styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-     constructor(private _router: Router) {}
-     public signupForm: any = FormGroup;
-     public isInvaildForm: boolean = false;
-
+     public signupForm: FormGroup;
+     public formModel: FormModel;
+     public formHelper: FormHelper;
+     public formErrors: any;
+     public validationMessage: any;
+     public globalFormValidator: GlobalFormValidator;
+     public passwordPattern = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$';
+     constructor(private _router: Router) {
+          this.formModel = new FormModel();
+          this.formHelper = new FormHelper();
+          this.globalFormValidator = new GlobalFormValidator();
+     }
      ngOnInit(): void {
           this.createSignupForm();
      }
 
-     //      public navigateToLoginPage() {
-     //           this._router.navigateByUrl('/login');
-     //		 (click)="navigateToLoginPage()"
-     //      }
      createSignupForm() {
           this.signupForm = new FormGroup({
-               firstName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
-               lastName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]+$')]),
+               firstName: new FormControl('', [Validators.required]),
+               lastName: new FormControl('', [Validators.required]),
                email: new FormControl('', [Validators.required, Validators.email]),
-               contact: new FormControl('', [Validators.required, Validators.minLength(10)]),
-               password: new FormControl('', [Validators.required, Validators.minLength(4)])
+               phone: new FormControl('', [Validators.required, Validators.minLength(10)]),
+               password: new FormControl('', [Validators.required, Validators.minLength(4)]),
+               confirmPassword: new FormControl('', [Validators.required])
           });
+          this.loadFormProperty('signupForm');
      }
 
      public signupFormSubmission() {
@@ -37,31 +46,18 @@ export class SignupComponent {
                localStorage.setItem('signupData', parsedDetails);
                this._router.navigateByUrl('/home');
           } else {
-               this.isInvaildForm = true;
+               this.displayAllFormErrors(this.signupForm);
           }
      }
-
-     //      signupFormSubmission() {
-     //           console.log(this.signupForm.value);
-     //      }
-
-     public updateFlag() {
-          this.isInvaildForm = false;
+     public loadFormProperty(form: string) {
+          this.formErrors = this.formModel.formErrors[form];
+          this.validationMessage = this.formModel.validationMessage[form];
+     }
+     public displaySingleFormError(group: FormGroup) {
+          this.formErrors = this.globalFormValidator.displaySingleFormError(group, this.formErrors, this.validationMessage);
      }
 
-     get firstName() {
-          return this.signupForm.get('firstName');
-     }
-     get lastName() {
-          return this.signupForm.get('lastName');
-     }
-     get email() {
-          return this.signupForm.get('email');
-     }
-     get contact() {
-          return this.signupForm.get('contact');
-     }
-     get password() {
-          return this.signupForm.get('password');
+     public displayAllFormErrors(group: FormGroup) {
+          this.formErrors = this.globalFormValidator.displayAllFormErrors(group, this.formErrors, this.validationMessage);
      }
 }

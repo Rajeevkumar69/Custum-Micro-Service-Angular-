@@ -23,7 +23,8 @@ export class SpaceCalculatorComponent implements OnInit {
      // prettier-ignore
      constructor(
           private _elemRef: ElementRef,
-     ) {
+     ) 
+     {
           this.configuration = new CalculatorConfiguration();
      }
 

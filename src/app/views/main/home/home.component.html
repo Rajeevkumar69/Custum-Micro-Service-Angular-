@@ -1,28 +1,73 @@
-<div *ngIf="userDetails" class="container">
-     <div class="row">
-          <div class="col-md-12">
-               <h1 class="text-center">:USER DATA:</h1>
-               <hr />
-          </div>
-          <div class="col-md-4">
-               <label>First Name</label>
-               <p>{{ userDetails.firstName }}</p>
-          </div>
-          <div class="col-md-4">
-               <label>Last Name</label>
-               <p>{{ userDetails.lastName }}</p>
-          </div>
-          <div class="col-md-4">
-               <label>Email</label>
-               <p>{{ userDetails.email }}</p>
-          </div>
-          <div class="col-md-4">
-               <label>Password</label>
-               <p>{{ userDetails.password }}</p>
-          </div>
-          <div class="col-md-4">
-               <label>Contact</label>
-               <p>{{ userDetails.contact }}</p>
+<br /><br /><br />
+<app-computer-config></app-computer-config>
+<app-mouse-config></app-mouse-config>
+<br /><br /><br />
+<div class="container">
+     <div class="row jc-center">
+          <div class="col-md-8"><br /><br /></div>
+
+          <div class="col-md-6">
+               <div class="card cms-card">
+                    <form [formGroup]="bankAccountForm" (ngSubmit)="submitForm()">
+                         <div class="form-group">
+                              <h3 class="center">Login</h3>
+                              <hr />
+                         </div>
+
+                         <!-- USER NAME -->
+                         <div class="form-group">
+                              <label>User Name</label>
+                              <input formControlName="name" type="text" (blur)="displaySingleFormError(bankAccountForm)" placeholder="Enter  name" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.name">{{ formErrors.name }}</span>
+                         </div>
+
+                         <!-- PASSWORD -->
+                         <div class="form-group">
+                              <label>Age</label>
+                              <input formControlName="age" type="number" (blur)="displaySingleFormError(bankAccountForm)" placeholder="Enter age" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.age">{{ formErrors.age }}</span>
+                         </div>
+
+                         <div formGroupName="address" class="form-group-name">
+                              <div class="form-group">
+                                   <label>Address Line 1</label>
+                                   <input formControlName="address1" type="text" (blur)="displayNestedSingleFormError(bankAccountForm, 'address')" placeholder="Enter address 1" class="form-control" />
+                                   <span class="form-error" *ngIf="formErrors.address && formErrors.address.address1">{{ formErrors.address.address1 }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Address Line 2</label>
+                                   <input formControlName="address2" type="text" (blur)="displayNestedSingleFormError(bankAccountForm, 'address')" placeholder="Enter address 2" class="form-control" />
+                                   <span class="form-error" *ngIf="formErrors.address && formErrors.address.address2">{{ formErrors.address.address2 }}</span>
+                              </div>
+                         </div>
+                         <div formGroupName="fields" class="form-group-name">
+                              <div class="form-group">
+                                   <label>Field 1</label>
+                                   <input formControlName="field1" type="text" (blur)="displayNestedSingleFormError(bankAccountForm, 'fields')" placeholder="Enter field 1" class="form-control" />
+                                   <span class="form-error" *ngIf="formErrors.fields && formErrors.fields.field1">{{ formErrors.fields.field1 }}</span>
+                              </div>
+                              <div class="form-group">
+                                   <label>Field 2</label>
+                                   <input formControlName="field2" type="text" (blur)="displayNestedSingleFormError(bankAccountForm, 'fields')" placeholder="Enter field 2" class="form-control" />
+                                   <span class="form-error" *ngIf="formErrors.fields && formErrors.fields.field2">{{ formErrors.fields.field2 }}</span>
+                              </div>
+                         </div>
+
+                         <!-- LOGIN BUTTON -->
+                         <div class="form-group">
+                              <button type="submit" class="btn btn-md btn-primary cms-button active">Login</button>
+                         </div>
+
+                         <!-- SIGN-UP LINK -->
+                         <div class="form-group">
+                              <span>Not Registered ?</span>
+                              <span>&nbsp;</span>
+                              <a [routerLink]="['../signup']">
+                                   <span class="create-account-link">Create Account</span>
+                              </a>
+                         </div>
+                    </form>
+               </div>
           </div>
      </div>
 </div>

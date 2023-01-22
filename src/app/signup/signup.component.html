@@ -21,41 +21,59 @@
                          <!-- first name -->
                          <div class="form-group">
                               <label>First Name</label>
-                              <input (blur)="updateFlag()" formControlName="firstName" type="text" placeholder="Enter first name" class="form-control" />
-                              <span *ngIf="firstName && firstName.invalid && firstName.touched" class="form-error">Please enter valid name</span>
+                              <input (blur)="displaySingleFormError(signupForm)" formControlName="firstName" type="text" placeholder="Enter first name" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.firstName">{{ formErrors.firstName }}</span>
                          </div>
 
                          <!-- last name -->
                          <div class="form-group">
                               <label>Last name</label>
-                              <input (blur)="updateFlag()" formControlName="lastName" type="email" placeholder="Enter last name" class="form-control" />
-                              <span *ngIf="lastName && lastName.invalid && lastName.touched" class="form-error">Please enter valid name</span>
+                              <input (blur)="displaySingleFormError(signupForm)" formControlName="lastName" type="email" placeholder="Enter last name" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.lastName">{{ formErrors.lastName }}</span>
                          </div>
 
                          <!-- Email -->
                          <div class="form-group">
                               <label>Email</label>
-                              <input type="email" (blur)="updateFlag()" formControlName="email" placeholder="Enter email" class="form-control" />
-                              <span *ngIf="email && email.invalid && email.touched" class="form-error">Please enter valid email</span>
-                         </div>
-
-                         <!-- password -->
-                         <div class="form-group">
-                              <label>Password</label>
-                              <input type="password" (blur)="updateFlag()" formControlName="password" placeholder="Enter password" class="form-control" />
-                              <span *ngIf="password && password.invalid && password.touched" class="form-error">Please enter valid password</span>
+                              <input type="email" (blur)="displaySingleFormError(signupForm)" formControlName="email" placeholder="Enter email" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.email">{{ formErrors.email }}</span>
                          </div>
 
                          <!-- contact -->
                          <div class="form-group">
                               <label>Phone</label>
-                              <input type="number" (blur)="updateFlag()" formControlName="contact" placeholder="Enter phone number" class="form-control" />
-                              <span class="form-error" *ngIf="password && password.invalid && password.touched">Please enter valid password</span>
+                              <input type="number" (blur)="displaySingleFormError(signupForm)" formControlName="phone" placeholder="Enter phone number" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.phone">{{ formErrors.phone }}</span>
+                         </div>
+
+                         <!-- password -->
+                         <div class="form-group">
+                              <label>Password</label>
+                              <input type="password" (blur)="displaySingleFormError(signupForm)" formControlName="password" placeholder="Enter password" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.password">{{ formErrors.password }}</span>
+                         </div>
+
+                         <!-- Confirm Password -->
+                         <div class="form-group">
+                              <label>Confirm Password</label>
+                              <input type="password" (blur)="displaySingleFormError(signupForm)" formControlName="confirmPassword" placeholder="Enter password" class="form-control" />
+                              <span class="form-error" *ngIf="formErrors.confirmPassword">{{ formErrors.confirmPassword }}</span>
+                         </div>
+
+                         <!-- Password criteria -->
+                         <div class="form-group">
+                              <div class="password-criteria">
+                                   <ul>
+                                        <ng-container *ngFor="let item of formHelper.passwordCriteriaList">
+                                             <li>{{ item.criteria }}</li>
+                                        </ng-container>
+                                   </ul>
+                              </div>
                          </div>
 
                          <!-- Button -->
                          <div class="form-group">
-                              <button type="submit" [disabled]="signupForm.invalid" class="btn btn-md btn-primary cms-button">Submit</button>
+                              <button type="submit" class="btn btn-md btn-primary cms-button">Submit</button>
                          </div>
 
                          <!-- Login page link -->

@@ -1,0 +1,18 @@
+<div class="card text-center">
+     <div style="color: skyblue; font-weight: bold" class="card-header">DATA THROUGH API</div>
+     <div class="card-body">
+          <ul *ngFor="let data of users">
+               <li class="list-group-item">ID: {{ data.id }}</li>
+               <li>NAME:-- {{ data.name }}</li>
+               <li>USERNAME:-- {{ data.username }}</li>
+               <li>EMAIL:-- {{ data.email }}</li>
+               <li>ADDRESS</li>
+               <li>CITY:-- {{ data.address.city }}</li>
+               <li>CODE:-- {{ data.address.zipcode }}</li>
+               <li>PHONE:-- {{ data.phone }}</li>
+               <li>WEBSITE:-- {{ data.website }}</li>
+               <li>COMPANY:-- {{ data.company.name }}</li>
+          </ul>
+     </div>
+     <div class="card-footer text-muted">&copy; All right reserved 2023</div>
+</div>

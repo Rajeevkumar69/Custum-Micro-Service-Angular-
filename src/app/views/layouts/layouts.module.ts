@@ -19,6 +19,13 @@ import { ToDoFooterComponent } from '../main/to-do-app/to-do-footer/to-do-footer
 import { ToDoDataComponent } from '../main/to-do-app/to-do-data/to-do-data.component';
 import { CounterAppComponent } from '../main/counter-app/counter-app.component';
 import { PartialsModule } from '../main/partials/partials.module';
+import { UserDataComponent } from '../main/user-data/user-data.component';
+import { UserDataFormComponent } from '../main/user-data-form/user-data-form.component';
+import { NestedFormComponent } from '../main/nested-form/nested-form.component';
+import { FirstComponentComponent } from '../main/first-component/first-component.component';
+import { SecondComponentComponent } from '../main/second-component/second-component.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegistrationFormComponent } from '../main/registration-form/registration-form.component';
 
 // prettier-ignore
 @NgModule({
@@ -37,6 +44,13 @@ import { PartialsModule } from '../main/partials/partials.module';
           ToDoFooterComponent,
           ToDoDataComponent,
           CounterAppComponent,
+          UserDataComponent,
+          UserDataFormComponent,
+          NestedFormComponent,
+         FirstComponentComponent,
+         SecondComponentComponent,
+         RegistrationFormComponent
+         
      ],
      imports: [
           CommonModule, 
@@ -44,7 +58,8 @@ import { PartialsModule } from '../main/partials/partials.module';
           FormsModule,
           RouterModule, 
           ReactiveFormsModule,
-          PartialsModule
+          PartialsModule,
+          HttpClientModule
      ]
 })
 export class LayoutsModule {}

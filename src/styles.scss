@@ -49,3 +49,16 @@ body {
      margin: 0;
      font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+label {
+     color: #0000ff;
+     font-style: italic;
+     font-size: 10px;
+     font-weight: bold;
+}
+input {
+     font-size: 17px;
+     font-family: 'Courier New', Courier, monospace;
+     color: #000000;
+     background-color: #ffff;
+     font-weight: bold;
+}

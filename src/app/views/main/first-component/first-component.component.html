@@ -1,0 +1,24 @@
+<div class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <h3 style="color: crimson; font-weight: bold" class="text-center">Data through API</h3>
+               <hr />
+               <table class="table table-light">
+                    <thead class="thead-light">
+                         <tr>
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Information</th>
+                         </tr>
+                    </thead>
+                    <tbody *ngFor="let user of users">
+                         <td>{{ user.id }}</td>
+                         <td>{{ user.name }}</td>
+                         <td>{{ user.email }}</td>
+                         <td>{{ user.body }}</td>
+                    </tbody>
+               </table>
+          </div>
+     </div>
+</div>

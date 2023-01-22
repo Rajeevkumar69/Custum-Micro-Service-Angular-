@@ -12,6 +12,12 @@ import { SpaceCalculatorComponent } from '../main/space-calculator/space-calcula
 import { ToDoAppComponent } from '../main/to-do-app/to-do-app.component';
 import { ToDoDataComponent } from '../main/to-do-app/to-do-data/to-do-data.component';
 import { CounterAppComponent } from '../main/counter-app/counter-app.component';
+import { UserDataComponent } from '../main/user-data/user-data.component';
+import { UserDataFormComponent } from '../main/user-data-form/user-data-form.component';
+import { NestedFormComponent } from '../main/nested-form/nested-form.component';
+import { FirstComponentComponent } from '../main/first-component/first-component.component';
+import { SecondComponentComponent } from '../main/second-component/second-component.component';
+import { RegistrationFormComponent } from '../main/registration-form/registration-form.component';
 
 const routes: Routes = [
      {
@@ -63,6 +69,30 @@ const routes: Routes = [
                {
                     path: 'counter-app',
                     component: CounterAppComponent
+               },
+               {
+                    path: 'user-data',
+                    component: UserDataComponent
+               },
+               {
+                    path: 'user-data-form',
+                    component: UserDataFormComponent
+               },
+               {
+                    path: 'nested-form',
+                    component: NestedFormComponent
+               },
+               {
+                    path: 'first-component',
+                    component: FirstComponentComponent
+               },
+               {
+                    path: 'second-component',
+                    component: SecondComponentComponent
+               },
+               {
+                    path: 'registration-form',
+                    component: RegistrationFormComponent
                }
           ]
      }
