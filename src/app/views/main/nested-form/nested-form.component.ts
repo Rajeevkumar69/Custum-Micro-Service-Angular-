@@ -14,6 +14,7 @@ export class NestedFormComponent implements OnInit {
      public campusInfo: FormGroup;
      public campusDetails: FormGroup;
      public specificLab: FormGroup;
+
      ngOnInit(): void {
           this.createSchoolInfoForm();
           this.setFormValue();

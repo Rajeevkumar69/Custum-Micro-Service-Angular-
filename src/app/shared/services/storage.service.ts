@@ -6,7 +6,7 @@ import * as CryptoJS from 'crypto-js';
 })
 export class StorageService {
      private seckey: string = 'OMPANDEY@ABC9BA';
-     //  Why this is private
+
 
      public setUserInformation(value: any): void {
           this.set('USER_INFORMATION', JSON.stringify(value));

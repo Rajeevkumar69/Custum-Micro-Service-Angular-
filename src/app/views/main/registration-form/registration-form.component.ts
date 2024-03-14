@@ -146,12 +146,6 @@ export class RegistrationFormComponent implements OnInit {
           ID.get('hallTicket').setValue('19MT1A0556');
      }
 
-     public studentInfoSubmit() {
-          if (this.studentInfo) {
-               //        console.log(this.studentInfo.value);
-          }
-     }
-
      public loadFormProperty(form: string) {
           this.formErrors = this.formModel.formErrors[form];
           this.validationMessage = this.formModel.validationMessage[form];

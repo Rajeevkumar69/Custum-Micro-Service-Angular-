@@ -11,7 +11,7 @@ export class SecondComponentComponent implements OnInit {
      // prettier-ignore
      constructor(
           private _dataService: DataService,
-          ) {}
+     ) { }
 
      ngOnInit() {
           this.getUsersDataThroughAPI();

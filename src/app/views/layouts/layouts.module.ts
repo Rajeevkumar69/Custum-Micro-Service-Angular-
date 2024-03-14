@@ -33,10 +33,10 @@ import { RegistrationFormComponent } from '../main/registration-form/registratio
           LayoutsComponent,
           HomeComponent,
           DashboardComponent,
-          AboutComponent, 
+          AboutComponent,
           CmsCalculatorComponent,
           LuckyMessageGeneratorComponent,
-          CmsProductsComponent, 
+          CmsProductsComponent,
           AddProductsComponent,
           SpaceCalculatorComponent,
           FooterComponent,
@@ -50,13 +50,13 @@ import { RegistrationFormComponent } from '../main/registration-form/registratio
          FirstComponentComponent,
          SecondComponentComponent,
          RegistrationFormComponent
-         
+
      ],
      imports: [
-          CommonModule, 
-          LayoutsRoutingModule, 
+          CommonModule,
+          LayoutsRoutingModule,
           FormsModule,
-          RouterModule, 
+          RouterModule,
           ReactiveFormsModule,
           PartialsModule,
           HttpClientModule

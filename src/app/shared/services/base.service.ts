@@ -7,7 +7,7 @@ import { ResponseModel } from '../models/response-model';
      providedIn: 'root'
 })
 export class BaseService {
-     constructor() {}
+     constructor() { }
 
      protected handleMap(response: any) {
           return new ResponseModel(response);

@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
      public userLoginDetails: any = {};
+     public title = "AngularUnitTesting";
 
      ngOnInit(): void {
           this.getUserLoginDetails();

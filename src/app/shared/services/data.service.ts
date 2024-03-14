@@ -12,12 +12,6 @@ export class DataService extends BaseService {
      constructor(protected _http: HttpClient) {
           super();
      }
-
-     // public getSimpleWayComments() {
-     //      let url: any = 'https://jsonplaceholder.typicode.com/comments';
-     //      return this._http.get(url);
-     // }
-
      public getComments() {
           let url: string = 'https://jsonplaceholder.typicode.com/comments';
           return this._http.get(url).pipe(map(this.handleMap), catchError(this.handleError));

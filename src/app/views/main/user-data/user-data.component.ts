@@ -12,7 +12,7 @@ export class UserDataComponent implements OnInit {
      constructor(
           private _router: Router,
           private _storageService: StorageService
-     ) {}
+     ) { }
      public userDetails: any = [];
 
      ngOnInit(): void {

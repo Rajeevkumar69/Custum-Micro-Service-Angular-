@@ -38,6 +38,7 @@
                               <input formControlName="address" type="text" (blur)="displaySingleFormError(studentInfo)" class="form-control" placeholder="Address" />
                               <span class="form-error" *ngIf="formErrors.address">{{ formErrors.address }}</span>
                          </div>
+
                          <!-- ------------- -->
                          <div formGroupName="studentAddress" class="col-md-6">
                               <div class="form-group">

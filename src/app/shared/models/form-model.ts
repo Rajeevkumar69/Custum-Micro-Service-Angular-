@@ -1,72 +1,72 @@
 export class FormModel {
      public formErrors: any = {
           login: {
-               userName: '',
-               password: ''
+               userName: null,
+               password: null
           },
 
           bankAccountForm: {
-               name: '',
-               age: '',
+               name: null,
+               age: null,
                address: {
-                    address1: '',
-                    address2: ''
+                    address1: null,
+                    address2: null
                },
                fields: {
-                    field1: '',
-                    field2: ''
+                    field1: null,
+                    field2: null
                }
           },
           signupForm: {
-               firstName: '',
-               lastName: '',
-               email: '',
-               password: '',
-               confirmPassword: '',
-               phone: ''
+               firstName: null,
+               lastName: null,
+               email: null,
+               password: null,
+               confirmPassword: null,
+               phone: null
           },
           studentInfo: {
-               firstName: '',
-               lastName: '',
-               age: '',
-               email: '',
-               contact: '',
-               address: '',
+               firstName: null,
+               lastName: null,
+               age: null,
+               email: null,
+               contact: null,
+               address: null,
                studentAddress: {
-                    pAddress: '',
-                    pinCode: '',
-                    street: '',
-                    distric: '',
-                    state: '',
-                    country: '',
-                    fName: '',
-                    fContact: '',
-                    fOccupoation: '',
-                    fEmail: '',
-                    mName: '',
-                    mContact: '',
-                    mOccupation: '',
-                    mEmail: ''
+                    pAddress: null,
+                    pinCode: null,
+                    street: null,
+                    distric: null,
+                    state: null,
+                    country: null,
+                    fName: null,
+                    fContact: null,
+                    fOccupoation: null,
+                    fEmail: null,
+                    mName: null,
+                    mContact: null,
+                    mOccupation: null,
+                    mEmail: null
                },
                collegeDetails: {
-                    collegeName: '',
-                    collegeCampus: '',
-                    collegeArea: '',
-                    principleName: '',
-                    principleEmail: '',
-                    totalClass: '',
-                    totalProfessor: '',
-                    totalLab: ''
+                    collegeName: null,
+                    collegeCampus: null,
+                    collegeArea: null,
+                    principleName: null,
+                    principleEmail: null,
+                    totalClass: null,
+                    totalProfessor: null,
+                    totalLab: null
                },
                idCard: {
-                    sName: '',
-                    course: '',
-                    department: '',
-                    batch: '',
-                    bloodGroup: '',
-                    pContact: '',
-                    idAddress: '',
-                    hallTicket: ''
+                    sName: null,
+                    course: null,
+                    department: null,
+                    batch: null,
+                    bloodGroup: null,
+                    pContact: null,
+                    idAddress: null,
+                    hallTicket: null
                }
           }
      };

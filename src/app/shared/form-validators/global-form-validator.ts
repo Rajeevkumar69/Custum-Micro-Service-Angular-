@@ -1,7 +1,6 @@
 import { FormGroup } from '@angular/forms';
 
 export class GlobalFormValidator {
-     //
      public displaySingleFormError(group: FormGroup, formErrors: any, validationMessage: any) {
           Object.keys(group.controls).forEach((key: string) => {
                const abstractControl = group.get(key);
