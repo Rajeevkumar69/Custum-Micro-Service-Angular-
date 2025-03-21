@@ -1,0 +1,52 @@
+<div class="card">
+     <div class="card-body">
+          <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+               <div class="row">
+                    <div *ngFor="let control of formStructure" class="col-3">
+                         <!-- Text, Textarea & Number -->
+                         <div class="mb-3" *ngIf="['text', 'number', 'textarea'].includes(control.type)">
+                              <label for="exampleFormControlInput1" class="form-label">
+                                   {{ control.label }}
+                              </label>
+                              <input [type]="control.type" class="form-control" [formControlName]="control.name" *ngIf="control.type !== 'textarea'" />
+                              <textarea class="form-control" [formControlName]="control.name" *ngIf="control.type === 'textarea'"> </textarea>
+                              <span class="error" *ngIf="dynamicForm.controls[control.name]?.invalid && dynamicForm.controls[control.name]?.touched">
+                                   {{ getErrorMessage(control) }}
+                              </span>
+                         </div>
+
+                         <!-- Radio Button -->
+                         <div class="mb-3" *ngIf="['radio'].includes(control.type)">
+                              <div>
+                                   <label for="exampleFormControlInput1" class="form-label">
+                                        {{ control.label }}
+                                   </label>
+                              </div>
+                              <div class="form-check form-check-inline" *ngFor="let option of control.options">
+                                   <input class="form-check-input" type="radio" [formControlName]="control.name" id="inlineRadio1" [value]="option.value" />
+                                   <label class="form-check-label" for="inlineRadio1"> {{ option.label }}</label>
+                              </div>
+                         </div>
+
+                         <!-- Select  -->
+                         <div class="mb-3" *ngIf="['select'].includes(control.type)">
+                              <label for="exampleFormControlInput1" class="form-label">
+                                   {{ control.label }}
+                              </label>
+                              <select class="form-select" aria-label="Default select example" [formControlName]="control.name">
+                                   <option selected>-Select-</option>
+                                   <option *ngFor="let option of control.options" [value]="option.value">
+                                        {{ option.label }}
+                                   </option>
+                              </select>
+                              <span class="error" *ngIf="dynamicForm.controls[control.name]?.invalid && dynamicForm.controls[control.name]?.touched">
+                                   {{ getErrorMessage(control) }}
+                              </span>
+                         </div>
+                    </div>
+               </div>
+
+               <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+     </div>
+</div>

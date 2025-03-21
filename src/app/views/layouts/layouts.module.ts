@@ -26,6 +26,7 @@ import { FirstComponentComponent } from '../main/first-component/first-component
 import { SecondComponentComponent } from '../main/second-component/second-component.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationFormComponent } from '../main/registration-form/registration-form.component';
+import { DynamicFormComponent } from '../main/dynamic-form/dynamic-form.component';
 
 // prettier-ignore
 @NgModule({
@@ -49,7 +50,8 @@ import { RegistrationFormComponent } from '../main/registration-form/registratio
           NestedFormComponent,
          FirstComponentComponent,
          SecondComponentComponent,
-         RegistrationFormComponent
+         RegistrationFormComponent,
+         DynamicFormComponent
 
      ],
      imports: [
@@ -60,6 +62,9 @@ import { RegistrationFormComponent } from '../main/registration-form/registratio
           ReactiveFormsModule,
           PartialsModule,
           HttpClientModule
+     ],
+     exports:[
+          DynamicFormComponent
      ]
 })
 export class LayoutsModule {}

@@ -77,6 +77,11 @@ export class SidebarComponent implements OnInit {
                name: 'School Registration Form',
                icon: 'fas fa-school',
                path: 'registration-form'
+          },
+          {
+               name: 'CMS Dynamic Form',
+               icon: 'fas fa-globe',
+               path: 'dynamic-form'
           }
      ];
      ngOnInit(): void {}

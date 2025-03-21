@@ -18,6 +18,7 @@ import { NestedFormComponent } from '../main/nested-form/nested-form.component';
 import { FirstComponentComponent } from '../main/first-component/first-component.component';
 import { SecondComponentComponent } from '../main/second-component/second-component.component';
 import { RegistrationFormComponent } from '../main/registration-form/registration-form.component';
+import { DynamicFormComponent } from '../main/dynamic-form/dynamic-form.component';
 
 const routes: Routes = [
      {
@@ -93,6 +94,10 @@ const routes: Routes = [
                {
                     path: 'registration-form',
                     component: RegistrationFormComponent
+               },
+               {
+                    path: 'dynamic-form',
+                    component: DynamicFormComponent
                }
           ]
      }
